@@ -7,9 +7,9 @@ class Program
         Console.WriteLine("Select your Method");
         Console.WriteLine("GreaterThan");
         Console.WriteLine("Triangle");
-        string selection = Console.ReadLine();
+        string? selection = Console.ReadLine();
         //
-        switch (selection.ToLower()){
+        switch (selection?.ToLower()){
 
         default:
         Console.WriteLine("Wrong method name entered. Restarting program.");
@@ -48,11 +48,11 @@ class Program
 		Console.WriteLine ("Assign an integer value to N:");
 		int _numInput = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Left or right?");
-        string _sideSelect = Console.ReadLine();
+        string? _sideSelect = Console.ReadLine();
         int _height;
         int  _length;
-
-        switch (_sideSelect.ToLower()){
+        Console.WriteLine($"N is {_numInput}, Side is {_sideSelect}");
+        switch (_sideSelect?.ToLower()){
         case "left":
         for (_height=0;_height<_numInput;_height++){
             // controls the height of the display
