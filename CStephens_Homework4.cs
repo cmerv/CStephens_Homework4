@@ -3,29 +3,34 @@ class Program
 {
     static void Main(string[] args)
     {
+        start:
         Console.WriteLine("Select your Method");
         Console.WriteLine("GreaterThan");
         Console.WriteLine("TriangleLeft");
         Console.WriteLine("TriangleRight");
-        string selection = Console.ReadLine().ToLower();
+        string selection = Console.ReadLine();
         //
-        switch (selection){
+        switch (selection.ToLower()){
+
+        default:
+        Console.WriteLine("Wrong method name entered. Restarting program.");
+        goto start;
         
-        case "GreaterThan":
+        case "greaterthan":
         Console.WriteLine("2 Number Greater Than Program...");
         Console.WriteLine("Type an integer for integer A:");
-        int intA = Convert.ToInt32(Console.ReadLine());
+        int intA = Convert.ToInt16(Console.ReadLine());
         Console.WriteLine("Type an integer or integer B:");
-        int intB = Convert.ToInt32(Console.ReadLine());
+        int intB = Convert.ToInt16(Console.ReadLine());
         Console.WriteLine($"A = {intA}, B = {intB}");
-        GreaterThan(intA,intB);       
+        GreaterThan(intA, intB);       
         break;
 
-        case "TriangleLeft":
+        case "triangleleft":
         TriangleLeft();
         break;
 
-        case "TriangleRight":
+        case "triangleright":
         TriangleRight();
         break;
 
