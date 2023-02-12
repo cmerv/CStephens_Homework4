@@ -6,8 +6,7 @@ class Program
         start:
         Console.WriteLine("Select your Method");
         Console.WriteLine("GreaterThan");
-        Console.WriteLine("TriangleLeft");
-        Console.WriteLine("TriangleRight");
+        Console.WriteLine("Triangle");
         string selection = Console.ReadLine();
         //
         switch (selection.ToLower()){
@@ -26,14 +25,9 @@ class Program
         GreaterThan(intA, intB);       
         break;
 
-        case "triangleleft":
-        TriangleLeft();
+        case "triangle":
+        TriangleLeftRight();
         break;
-
-        case "triangleright":
-        TriangleRight();
-        break;
-
         }
         
     }
@@ -49,36 +43,44 @@ class Program
             break;
         }
     }
-    static void TriangleLeft(){
-        Console.WriteLine("Triangle Left Program...");
+    static void TriangleLeftRight(){
+        Console.WriteLine("Triangle Program...");
 		Console.WriteLine ("Assign an integer value to N:");
-		int _numInputL = Convert.ToInt32(Console.ReadLine());
-		for (int _heightL=0;_heightL<_numInputL;_heightL++){
+		int _numInput = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Left or right?");
+        string _sideSelect = Console.ReadLine();
+        int _height;
+        int  _length;
+
+        switch (_sideSelect.ToLower()){
+        case "left":
+        for (_height=0;_height<_numInput;_height++){
             // controls the height of the display
-			for (int _lengthL=0;_lengthL<=_heightL;_lengthL++){
+			for ( _length=0;_length<=_height;_length++){
             // controls width. relate length to height to change output depending on which row we are on
 			Console.Write("#");
 			}
 		Console.WriteLine("");
-		}
-    }
+        }
+        break;        
 
-    static void TriangleRight(){
-        Console.WriteLine("------Part 4 begin------");
-		Console.WriteLine ("Assign an integer value to N:");
-		int _numInputR = Convert.ToInt32(Console.ReadLine());
-        int _blank;
-		for (int _heightR=0;_heightR<=_numInputR;_heightR++){
-			for (_blank=1;_blank<=_numInputR-_heightR;_blank++){
+        case "right":
+            int _blank;
+		for (_height=0;_height<=_numInput;_height++){
+			for (_blank=1;_blank<=_numInput-_height;_blank++){
                 // defines how we calculate the blank space that fills in where no number exists yet
 			Console.Write(" ");
 			}
-			for (int _lengthR=1;_blank+_lengthR<=_numInputR+1;_lengthR++){ 
+			for (_length=1;_blank+_length<=_numInput+1;_length++){ 
                 //as we are pushing our numbers all the way to the right, we need to keep track of the left-bound blank space which decreases as we count up
-			Console.Write($"{_lengthR}");
+			Console.Write("*");
 			}
 		Console.WriteLine("");
 		}
+        break;
+        }
+		
+
+        
     }
-        //
-    }
+}
