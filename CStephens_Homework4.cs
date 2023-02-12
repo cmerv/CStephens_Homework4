@@ -12,7 +12,13 @@ class Program
         switch (selection){
         
         case "GreaterThan":
-        GreaterThan();       
+        Console.WriteLine("2 Number Greater Than Program...");
+        Console.WriteLine("Type an integer for integer A:");
+        int intA = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Type an integer or integer B:");
+        int intB = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"A = {intA}, B = {intB}");
+        GreaterThan(intA,intB);       
         break;
 
         case "TriangleLeft":
@@ -26,21 +32,15 @@ class Program
         }
         
     }
-    static void GreaterThan(){
-        Console.WriteLine("2 Number Greater Than Program...");
-        Console.WriteLine("Type an integer for integer A:");
-        int intA = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Type an integer or integer B:");
-        int intB = Convert.ToInt32(Console.ReadLine());
-        bool gtResult = intA>intB;
-        Console.WriteLine($"A = {intA}, B = {intB}");
+    static void GreaterThan(int gtIntA, int gtIntB){
+        bool gtResult = gtIntA>gtIntB;
         switch (gtResult){
             case true:
-            Console.WriteLine($"The greater number is {intA}");
+            Console.WriteLine($"The greater number is {gtIntA}");
             break;
 
             case false:
-            Console.Write($"The greater number is {intB}");
+            Console.Write($"The greater number is {gtIntB}");
             break;
         }
     }
