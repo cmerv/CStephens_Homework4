@@ -1,5 +1,5 @@
 ﻿namespace CStephens_Homework4;
-class Program
+class Homework4
 {
     static void Main(string[] args)
     {
